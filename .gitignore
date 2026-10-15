@@ -1,0 +1,21 @@
+# Flutter / Dart build output and tool files
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+pubspec.lock
+
+# IDE files
+.idea/
+*.iml
+.vscode/launch.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
