@@ -11,21 +11,17 @@ class HomeScreen extends StatelessWidget {
 
   // FICTIONAL demonstration data - not real people.
   static const List<Tutor> _sampleTutors = [
-    Tutor(
-        name: 'Maria Santos',
-        subject: 'Mathematics',
-        hourlyRate: 250,
-        rating: 4.8),
-    Tutor(
-        name: 'Juan Dela Cruz',
-        subject: 'Programming',
-        hourlyRate: 300,
-        rating: 4.6),
+    Tutor(name: 'Maria Santos', subject: 'Mathematics', hourlyRate: 250, rating: 4.8),
+    Tutor(name: 'Juan Dela Cruz', subject: 'Programming', hourlyRate: 300, rating: 4.6),
     Tutor(name: 'Ana Reyes', subject: 'English', hourlyRate: 200, rating: 4.9),
   ];
 
   void _goToLogin(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.login);
+  }
+
+  void _goToReport(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.report);
   }
 
   @override
@@ -50,8 +46,7 @@ class HomeScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       decoration: const BoxDecoration(
         color: AppColors.background,
-        border:
-            Border(bottom: BorderSide(color: AppColors.primaryLight, width: 2)),
+        border: Border(bottom: BorderSide(color: AppColors.primaryLight, width: 2)),
       ),
       child: Row(
         children: [
@@ -69,6 +64,13 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Spacer(),
+          AppButton(
+            label: 'Report',
+            icon: Icons.flag_outlined,
+            outlined: true,
+            onPressed: () => _goToReport(context),
+          ),
+          const SizedBox(width: 8),
           AppButton(
             label: 'Login',
             outlined: true,
@@ -104,8 +106,7 @@ class HomeScreen extends StatelessWidget {
               'find tutors that fit their subjects and needs. Smart matching '
               'will be added in a future stage of the project.',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 16, color: AppColors.textDark, height: 1.5),
+              style: TextStyle(fontSize: 16, color: AppColors.textDark, height: 1.5),
             ),
           ),
           const SizedBox(height: 28),
@@ -194,12 +195,10 @@ class _TutorCard extends StatelessWidget {
               const SizedBox(height: 12),
               Text(
                 tutor.name,
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 4),
-              Text(tutor.subject,
-                  style: const TextStyle(color: AppColors.textMuted)),
+              Text(tutor.subject, style: const TextStyle(color: AppColors.textMuted)),
               const SizedBox(height: 12),
               Text(
                 '\u20B1${tutor.hourlyRate} / hour',

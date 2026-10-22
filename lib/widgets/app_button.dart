@@ -5,7 +5,7 @@ import '../constants/app_colors.dart';
 /// Reusable button. Filled green by default, or outlined if [outlined] is true.
 class AppButton extends StatelessWidget {
   final String label;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed; // null = disabled (e.g., while loading)
   final bool outlined;
   final IconData? icon;
 

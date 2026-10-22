@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
 import '../screens/login_screen.dart';
+import '../screens/report_form_screen.dart';
 
 /// Route names and the route table, kept in one place
 /// so names are never mistyped across files.
@@ -10,9 +11,11 @@ class AppRoutes {
 
   static const String home = '/';
   static const String login = '/login';
+  static const String report = '/report';
 
   static final Map<String, WidgetBuilder> routes = {
     home: (context) => const HomeScreen(),
     login: (context) => const LoginScreen(),
+    report: (context) => const ReportFormScreen(),
   };
 }

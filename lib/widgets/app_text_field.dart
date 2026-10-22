@@ -10,6 +10,8 @@ class AppTextField extends StatelessWidget {
   final IconData icon;
   final bool obscureText;
   final TextInputType keyboardType;
+  final int maxLines;
+  final bool enabled;
   final String? Function(String?)? validator;
 
   const AppTextField({
@@ -19,6 +21,8 @@ class AppTextField extends StatelessWidget {
     required this.icon,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
+    this.maxLines = 1,
+    this.enabled = true,
     this.validator,
   });
 
@@ -28,6 +32,8 @@ class AppTextField extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       keyboardType: keyboardType,
+      maxLines: obscureText ? 1 : maxLines,
+      enabled: enabled,
       validator: validator,
       decoration: InputDecoration(
         labelText: label,
